@@ -69,11 +69,17 @@ class logAPIController extends AppBaseController
      */
     public function store(CreatelogAPIRequest $request)
     {
-        $input = $request->all();
+        try {
+            $input = $request->all();
 
-        $log = $this->logRepository->create($input);
+            $log = $this->logRepository->create($input);
 
-        return $this->sendResponse($log->toArray(), 'Log saved successfully');
+            return $this->sendResponse($log->toArray(), 'Log saved successfully');
+        } catch (\Throwable $th) {
+            //throw $th;
+            return $th;
+        }
+
     }
 
     /**

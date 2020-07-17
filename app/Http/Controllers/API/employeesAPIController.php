@@ -32,6 +32,10 @@ class employeesAPIController extends AppBaseController
      * @param Request $request
      * @return Response
      */
+    public function getUser($id)
+    {
+        return employees::where('employee_id',$id)->first();
+    }
     public function index(Request $request)
     {
         $employees = $this->employeesRepository->all(

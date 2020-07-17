@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('devices', 'deviceAPIController');
 
 Route::resource('employees', 'employeesAPIController');
+Route::get('checkEmployee/{id}', 'employeesAPIController@getUser');
 
 Route::resource('failed_jobs', 'failed_jobsAPIController');
 
@@ -31,5 +32,11 @@ Route::resource('migrations', 'migrationsAPIController');
 
 Route::resource('password_resets', 'password_resetsAPIController');
 
+// Route::post('users/{id}', 'usersAPIController@getUser');
 Route::resource('users', 'usersAPIController');
 Route::any('allLog', 'logAPIController@allLog');
+
+
+Route::resource('questions', 'questionsAPIController');
+
+Route::resource('question_answers', 'question_answersAPIController');

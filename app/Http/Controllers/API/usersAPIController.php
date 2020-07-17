@@ -32,6 +32,7 @@ class usersAPIController extends AppBaseController
      * @param Request $request
      * @return Response
      */
+
     public function index(Request $request)
     {
         $users = $this->usersRepository->all(

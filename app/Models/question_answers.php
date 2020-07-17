@@ -6,21 +6,20 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class log
+ * Class question_answers
  * @package App\Models
- * @version July 16, 2020, 3:40 am UTC
+ * @version July 17, 2020, 7:30 pm PST
  *
- * @property \App\Models\Device $device
  * @property \App\Models\Employee $user
- * @property number $temp
  * @property integer $user_id
- * @property integer $device_id
+ * @property string $question_id
+ * @property string $answer
  */
-class log extends Model
+class question_answers extends Model
 {
-    //use SoftDeletes;
+    // use SoftDeletes;
 
-    public $table = 'log';
+    public $table = 'question_answers';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -31,10 +30,9 @@ class log extends Model
 
 
     public $fillable = [
-        'temp',
         'user_id',
-        'device_id',
-        'address'
+        'question_id',
+        'answer'
     ];
 
     /**
@@ -44,10 +42,9 @@ class log extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'temp' => 'float',
         'user_id' => 'integer',
-        'device_id' => 'integer',
-        'address'=>'string'
+        'question_id' => 'string',
+        'answer' => 'json'
     ];
 
     /**
@@ -56,25 +53,16 @@ class log extends Model
      * @var array
      */
     public static $rules = [
-        'temp' => 'required',
         'user_id' => 'required',
-        'device_id' => 'required',
-        'address'=>'required'
+        'question_id' => 'required',
+        'answer' => 'required'
     ];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function device()
-    {
-        return $this->belongsTo(\App\Models\Device::class, 'device_id');
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
     public function user()
     {
-        return $this->belongsTo(employees::class, 'user_id');
+        return $this->belongsTo(\App\Models\Employee::class, 'user_id');
     }
 }
