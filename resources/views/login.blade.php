@@ -8,11 +8,11 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css.css">
+      <!-- /.login-logo -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
-    <div class="login-box">
+    <div class="login-box" id="app">
       <div class="login-logo">
         <a href="../../index2.html"><b>Admin</b>LTE</a>
       </div>
@@ -25,11 +25,11 @@
             <div class="input-group mb-3">
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                @error('email')
+                                {{-- @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-envelope"></span>
@@ -39,11 +39,11 @@
             <div class="input-group mb-3">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                @error('password')
+                {{-- @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                @enderror
+                @enderror --}}
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-lock"></span>
@@ -67,6 +67,7 @@
             </div>
           </form>
 
+
           <p class="mb-1">
             <a href="forgot-password.html">I forgot my password</a>
           </p>
@@ -77,5 +78,4 @@
       </div>
     </div>
 </body>
-<script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
 </html>

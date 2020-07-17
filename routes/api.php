@@ -17,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('devices', 'deviceAPIController');
+
+Route::resource('employees', 'employeesAPIController');
+
+Route::resource('failed_jobs', 'failed_jobsAPIController');
+
+Route::resource('logs', 'logAPIController');
+
+Route::resource('migrations', 'migrationsAPIController');
+
+Route::resource('password_resets', 'password_resetsAPIController');
+
+Route::resource('users', 'usersAPIController');
+Route::any('allLog', 'logAPIController@allLog');
