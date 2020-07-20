@@ -77,4 +77,8 @@ class log extends Model
     {
         return $this->belongsTo(employees::class, 'user_id');
     }
+    public function log()
+    {
+        return $this->hasOne(question_answers::class, 'log_id');
+    }
 }

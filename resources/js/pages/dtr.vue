@@ -25,6 +25,7 @@
 
 
         <h2 class="h4">Temperature Record</h2>
+
         <b-overlay :show="loading" rounded="sm">
           <div class="table-responsive">
               <table class="table table-bordered table-striped table-sm table-fontsmall">
@@ -36,17 +37,28 @@
                           <th>Day</th>
                           <th>Time</th>
                           <th style="width:1%">Temp</th>
+                          <th style="width:1%">Symptoms</th>
                       </tr>
                   </thead>
                   <tbody>
                       <template v-for="(item) in logs">
-                            <tr v-for="(item2, id) in item.logs" :key="`id${id}`">
+                            <tr v-for="(item2, id) in item.logs" :key="`id${item2.id}`">
+
                                 <td>{{item.employee_id}}</td>
                                 <td>{{item.last_name}},{{item.first_name}}</td>
                                 <td>{{item2.created_at | formatDate('YY-M-D')}}</td>
                                 <td>{{item2.created_at | formatDate('ddd')}}</td>
                                 <td>{{item2.created_at | formatDate('hh:m a')}}</td>
                                 <td :class="tempColor(item2.temp)">{{item2.temp}}°</td>
+                                <td>
+                                    <template v-if="item2.log">
+                                            <span class="badge bg-danger" v-for="(item, index) in item2.log.answer" :key="index">
+                                              {{item}}
+                                        </span>
+                                    </template>
+
+
+                                </td>
                             </tr>
                       </template>
 
@@ -97,6 +109,7 @@ export default {
         this.filterData()
     },
     methods: {
+
         tempColor(temp){
             if(temp>=37.6)
                 return 'bg-danger disabled'

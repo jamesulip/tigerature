@@ -9,6 +9,7 @@ use App\Repositories\logRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use App\Models\employees;
+use App\Models\question_answers;
 use App\Models\users;
 use Carbon\Carbon;
 use Response;
@@ -41,7 +42,7 @@ class logAPIController extends AppBaseController
         $id     =   $req->all()['employee_id'];
 
         return employees::with(array('logs'=>function($log) use ($from,$to){
-            return $log->whereBetween('created_at', [$from, $to]);
+            return $log->with('log')->whereBetween('created_at', [$from, $to]);
         }))
         ->when($id!==null, function ($query) use ($id) {
             return $query->where('employee_id', $id);
@@ -70,10 +71,17 @@ class logAPIController extends AppBaseController
     public function store(CreatelogAPIRequest $request)
     {
         try {
-            $input = $request->all();
+           $input = $request->all();
 
-            $log = $this->logRepository->create($input);
+            $log = $this->logRepository->create($request->except('answers'));
 
+            if( $input["answers"]){
+                $ans =new question_answers();
+                $ans->user_id = $log->user_id;
+                $ans->log_id = $log->id;
+                $ans->answer = $request->answers;
+                $ans->save();
+            }
             return $this->sendResponse($log->toArray(), 'Log saved successfully');
         } catch (\Throwable $th) {
             //throw $th;

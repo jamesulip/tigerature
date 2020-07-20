@@ -20,6 +20,7 @@ class CreateLog extends Migration
             $table->unsignedBigInteger('device_id')->index();
             $table->foreign('user_id')->references('id')->on('employees');
             $table->foreign('device_id')->references('id')->on('device');
+            $table->text('address');
             $table->timestamps();
 
 

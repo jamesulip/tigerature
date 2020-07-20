@@ -13,12 +13,9 @@ class AddColumnToLogs extends Migration
      */
     public function up()
     {
-        Schema::table('log', function (Blueprint $table) {
+        Schema::table('employees', function (Blueprint $table) {
             //
-            // $table->text('address');
-            // if (!Schema::hasColumn('log', 'address')) {
-                $table->text('address');
-            // }
+            $table->text('gender')->nullable();
         });
     }
 
@@ -29,8 +26,8 @@ class AddColumnToLogs extends Migration
      */
     public function down()
     {
-        Schema::table('log', function (Blueprint $table) {
-            //
+        Schema::table('employees', function (Blueprint $table) {
+            $table->dropColumn(['gender']);
         });
     }
 }

@@ -16,9 +16,10 @@ class CreateQuestionAnswer extends Migration
         Schema::create('question_answers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('question_id');
+            $table->unsignedBigInteger('log_id');
             $table->json('answer');
             $table->foreign('user_id')->references('id')->on('employees');
+            $table->foreign('log_id')->references('id')->on('log');
             $table->timestamps();
 
         });

@@ -96358,7 +96358,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '/dtr',
     name: 'dtr',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../pages/dtr */ "./resources/js/pages/dtr.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../pages/dtr */ "./resources/js/pages/dtr.vue"));
     }
   }]
 });
