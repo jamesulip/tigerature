@@ -22,7 +22,15 @@
             </div>
         </div>
 
+        <div class="float-right">
+            <!-- <b-button type="info" href="http://google.com" target="_blank" size="sm"><i class="fas fa-table"></i> Export</b-button> -->
+            <form id="invisible_form" action="/api/export" method="post" target="_blank">
+                <input id="new_window_parameter_1" v-model="filterComputed.start_date" name="start_date" type="hidden" value="default">
+                <input id="new_window_parameter_1" v-model="filterComputed.end_date"  name="end_date" type="hidden" value="default">
 
+                <b-button type="submit"  size="sm" target="_blank"><span class="fa fa-download"></span> Download</b-button>
+            </form>
+        </div>
 
         <h2 class="h4">Temperature Record</h2>
 
@@ -56,6 +64,9 @@
                                               {{item}}
                                         </span>
                                     </template>
+                                    <span v-else class="badge bg-success">
+                                        Ok
+                                    </span>
 
 
                                 </td>
@@ -86,6 +97,17 @@ export default {
     filters:{
         formatDate(value,format){
             return moment(value).format(format)
+        }
+    },
+    computed: {
+        filterComputed:  {
+            get: function () {
+                return {
+                    end_date:moment(this.filter.end_date).format('L'),
+                    start_date:moment(this.filter.start_date).format('L'),
+                    employee_id:this.filter.employee_id
+                }
+            }
         }
     },
     mounted(){

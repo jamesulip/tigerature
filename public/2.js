@@ -81,6 +81,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -98,6 +109,17 @@ __webpack_require__.r(__webpack_exports__);
   filters: {
     formatDate: function formatDate(value, format) {
       return moment__WEBPACK_IMPORTED_MODULE_0___default()(value).format(format);
+    }
+  },
+  computed: {
+    filterComputed: {
+      get: function get() {
+        return {
+          end_date: moment__WEBPACK_IMPORTED_MODULE_0___default()(this.filter.end_date).format('L'),
+          start_date: moment__WEBPACK_IMPORTED_MODULE_0___default()(this.filter.start_date).format('L'),
+          employee_id: this.filter.employee_id
+        };
+      }
     }
   },
   mounted: function mounted() {
@@ -605,6 +627,87 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "float-right" }, [
+        _c(
+          "form",
+          {
+            attrs: {
+              id: "invisible_form",
+              action: "/api/export",
+              method: "post",
+              target: "_blank"
+            }
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.filterComputed.start_date,
+                  expression: "filterComputed.start_date"
+                }
+              ],
+              attrs: {
+                id: "new_window_parameter_1",
+                name: "start_date",
+                type: "hidden",
+                value: "default"
+              },
+              domProps: { value: _vm.filterComputed.start_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.filterComputed,
+                    "start_date",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.filterComputed.end_date,
+                  expression: "filterComputed.end_date"
+                }
+              ],
+              attrs: {
+                id: "new_window_parameter_1",
+                name: "end_date",
+                type: "hidden",
+                value: "default"
+              },
+              domProps: { value: _vm.filterComputed.end_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.filterComputed, "end_date", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "b-button",
+              { attrs: { type: "submit", size: "sm", target: "_blank" } },
+              [
+                _c("span", { staticClass: "fa fa-download" }),
+                _vm._v(" Download")
+              ]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
       _c("h2", { staticClass: "h4" }, [_vm._v("Temperature Record")]),
       _vm._v(" "),
       _c("b-overlay", { attrs: { show: _vm.loading, rounded: "sm" } }, [
@@ -700,7 +803,15 @@ var render = function() {
                                     ]
                                   )
                                 })
-                              : _vm._e()
+                              : _c(
+                                  "span",
+                                  { staticClass: "badge bg-success" },
+                                  [
+                                    _vm._v(
+                                      "\n                                    Ok\n                                "
+                                    )
+                                  ]
+                                )
                           ],
                           2
                         )

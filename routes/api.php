@@ -35,6 +35,7 @@ Route::resource('password_resets', 'password_resetsAPIController');
 // Route::post('users/{id}', 'usersAPIController@getUser');
 Route::resource('users', 'usersAPIController');
 Route::any('allLog', 'logAPIController@allLog');
+Route::post('export', 'logAPIController@export');
 
 
 Route::resource('questions', 'questionsAPIController');

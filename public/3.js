@@ -5,127 +5,9 @@
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/dtr.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      filter: {
-        start_date: new Date(),
-        end_date: new Date(),
-        employee_id: null
-      },
-      logs: [],
-      employees: [],
-      loading: false
-    };
-  },
-  filters: {
-    formatDate: function formatDate(value, format) {
-      return moment__WEBPACK_IMPORTED_MODULE_0___default()(value).format(format);
-    }
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    axios.get("/api/employees").then(function (res) {
-      _this.employees = res.data.data.map(function (x) {
-        return {
-          text: "".concat(x.last_name, ", ").concat(x.first_name),
-          value: x.employee_id
-        };
-      });
-
-      _this.employees.push({
-        value: null,
-        text: 'All'
-      });
-    })["catch"](function (err) {
-      console.error(err);
-    });
-    this.filterData();
-  },
-  methods: {
-    tempColor: function tempColor(temp) {
-      if (temp >= 37.6) return 'bg-danger disabled';else return 'bg-green disabled';
-    },
-    filterData: function filterData() {
-      var _this2 = this;
-
-      this.loading = true;
-      axios.post("/api/allLog", this.filter).then(function (res) {
-        _this2.loading = false;
-        _this2.logs = res.data;
-      })["catch"](function (err) {
-        _this2.loading = false;
-        console.error(err);
-      });
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\laragon\\www\\tigerature\\resources\\js\\pages\\dtr.vue: Unexpected token, expected \";\" (104:22)\n\n\u001b[0m \u001b[90m 102 | \u001b[39m    computed\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 103 | \u001b[39m        filterComputed\u001b[33m:\u001b[39m \u001b[36mfunction\u001b[39m () {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 | \u001b[39m                get() {\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 105 | \u001b[39m                \u001b[36mreturn\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 106 | \u001b[39m                    end_date\u001b[33m:\u001b[39mmoment(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mfilter\u001b[33m.\u001b[39mend_date)\u001b[33m.\u001b[39mformat(\u001b[32m'L'\u001b[39m)\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 107 | \u001b[39m                    start_date\u001b[33m:\u001b[39mmoment(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mfilter\u001b[33m.\u001b[39mstart_date)\u001b[33m.\u001b[39mformat(\u001b[32m'L'\u001b[39m)\u001b[0m\n    at Parser._raise (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:757:17)\n    at Parser.raiseWithData (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:750:17)\n    at Parser.raise (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:744:17)\n    at Parser.unexpected (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:8834:16)\n    at Parser.semicolon (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:8816:40)\n    at Parser.parseExpressionStatement (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11743:10)\n    at Parser.parseStatementContent (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11344:19)\n    at Parser.parseStatement (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11210:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11785:25)\n    at Parser.parseBlockBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11771:10)\n    at Parser.parseBlock (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11755:10)\n    at Parser.parseFunctionBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10758:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10741:10)\n    at C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11925:12\n    at Parser.withTopicForbiddingContext (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11085:14)\n    at Parser.parseFunction (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11924:10)\n    at Parser.parseFunctionExpression (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10217:17)\n    at Parser.parseExprAtom (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10096:21)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9688:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9668:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9538:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9511:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9466:21)\n    at Parser.parseObjectProperty (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10636:101)\n    at Parser.parseObjPropValue (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10661:101)\n    at Parser.parseObjectMember (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10585:10)\n    at Parser.parseObj (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10494:25)\n    at Parser.parseExprAtom (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10090:28)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9688:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9668:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9538:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9511:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9466:21)\n    at Parser.parseObjectProperty (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10636:101)\n    at Parser.parseObjPropValue (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10661:101)\n    at Parser.parseObjectMember (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10585:10)");
 
 /***/ }),
 
@@ -145,304 +27,6 @@ exports.push([module.i, "\n.table-fontsmall[data-v-21939509]{\n    font-size: 15
 
 // exports
 
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
-/*!**************************************************!*\
-  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": "./node_modules/moment/locale/af.js",
-	"./af.js": "./node_modules/moment/locale/af.js",
-	"./ar": "./node_modules/moment/locale/ar.js",
-	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
-	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
-	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
-	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
-	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
-	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
-	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
-	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
-	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
-	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
-	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
-	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
-	"./ar.js": "./node_modules/moment/locale/ar.js",
-	"./az": "./node_modules/moment/locale/az.js",
-	"./az.js": "./node_modules/moment/locale/az.js",
-	"./be": "./node_modules/moment/locale/be.js",
-	"./be.js": "./node_modules/moment/locale/be.js",
-	"./bg": "./node_modules/moment/locale/bg.js",
-	"./bg.js": "./node_modules/moment/locale/bg.js",
-	"./bm": "./node_modules/moment/locale/bm.js",
-	"./bm.js": "./node_modules/moment/locale/bm.js",
-	"./bn": "./node_modules/moment/locale/bn.js",
-	"./bn.js": "./node_modules/moment/locale/bn.js",
-	"./bo": "./node_modules/moment/locale/bo.js",
-	"./bo.js": "./node_modules/moment/locale/bo.js",
-	"./br": "./node_modules/moment/locale/br.js",
-	"./br.js": "./node_modules/moment/locale/br.js",
-	"./bs": "./node_modules/moment/locale/bs.js",
-	"./bs.js": "./node_modules/moment/locale/bs.js",
-	"./ca": "./node_modules/moment/locale/ca.js",
-	"./ca.js": "./node_modules/moment/locale/ca.js",
-	"./cs": "./node_modules/moment/locale/cs.js",
-	"./cs.js": "./node_modules/moment/locale/cs.js",
-	"./cv": "./node_modules/moment/locale/cv.js",
-	"./cv.js": "./node_modules/moment/locale/cv.js",
-	"./cy": "./node_modules/moment/locale/cy.js",
-	"./cy.js": "./node_modules/moment/locale/cy.js",
-	"./da": "./node_modules/moment/locale/da.js",
-	"./da.js": "./node_modules/moment/locale/da.js",
-	"./de": "./node_modules/moment/locale/de.js",
-	"./de-at": "./node_modules/moment/locale/de-at.js",
-	"./de-at.js": "./node_modules/moment/locale/de-at.js",
-	"./de-ch": "./node_modules/moment/locale/de-ch.js",
-	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
-	"./de.js": "./node_modules/moment/locale/de.js",
-	"./dv": "./node_modules/moment/locale/dv.js",
-	"./dv.js": "./node_modules/moment/locale/dv.js",
-	"./el": "./node_modules/moment/locale/el.js",
-	"./el.js": "./node_modules/moment/locale/el.js",
-	"./en-au": "./node_modules/moment/locale/en-au.js",
-	"./en-au.js": "./node_modules/moment/locale/en-au.js",
-	"./en-ca": "./node_modules/moment/locale/en-ca.js",
-	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
-	"./en-gb": "./node_modules/moment/locale/en-gb.js",
-	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
-	"./en-ie": "./node_modules/moment/locale/en-ie.js",
-	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
-	"./en-il": "./node_modules/moment/locale/en-il.js",
-	"./en-il.js": "./node_modules/moment/locale/en-il.js",
-	"./en-in": "./node_modules/moment/locale/en-in.js",
-	"./en-in.js": "./node_modules/moment/locale/en-in.js",
-	"./en-nz": "./node_modules/moment/locale/en-nz.js",
-	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
-	"./en-sg": "./node_modules/moment/locale/en-sg.js",
-	"./en-sg.js": "./node_modules/moment/locale/en-sg.js",
-	"./eo": "./node_modules/moment/locale/eo.js",
-	"./eo.js": "./node_modules/moment/locale/eo.js",
-	"./es": "./node_modules/moment/locale/es.js",
-	"./es-do": "./node_modules/moment/locale/es-do.js",
-	"./es-do.js": "./node_modules/moment/locale/es-do.js",
-	"./es-us": "./node_modules/moment/locale/es-us.js",
-	"./es-us.js": "./node_modules/moment/locale/es-us.js",
-	"./es.js": "./node_modules/moment/locale/es.js",
-	"./et": "./node_modules/moment/locale/et.js",
-	"./et.js": "./node_modules/moment/locale/et.js",
-	"./eu": "./node_modules/moment/locale/eu.js",
-	"./eu.js": "./node_modules/moment/locale/eu.js",
-	"./fa": "./node_modules/moment/locale/fa.js",
-	"./fa.js": "./node_modules/moment/locale/fa.js",
-	"./fi": "./node_modules/moment/locale/fi.js",
-	"./fi.js": "./node_modules/moment/locale/fi.js",
-	"./fil": "./node_modules/moment/locale/fil.js",
-	"./fil.js": "./node_modules/moment/locale/fil.js",
-	"./fo": "./node_modules/moment/locale/fo.js",
-	"./fo.js": "./node_modules/moment/locale/fo.js",
-	"./fr": "./node_modules/moment/locale/fr.js",
-	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
-	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
-	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
-	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
-	"./fr.js": "./node_modules/moment/locale/fr.js",
-	"./fy": "./node_modules/moment/locale/fy.js",
-	"./fy.js": "./node_modules/moment/locale/fy.js",
-	"./ga": "./node_modules/moment/locale/ga.js",
-	"./ga.js": "./node_modules/moment/locale/ga.js",
-	"./gd": "./node_modules/moment/locale/gd.js",
-	"./gd.js": "./node_modules/moment/locale/gd.js",
-	"./gl": "./node_modules/moment/locale/gl.js",
-	"./gl.js": "./node_modules/moment/locale/gl.js",
-	"./gom-deva": "./node_modules/moment/locale/gom-deva.js",
-	"./gom-deva.js": "./node_modules/moment/locale/gom-deva.js",
-	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
-	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
-	"./gu": "./node_modules/moment/locale/gu.js",
-	"./gu.js": "./node_modules/moment/locale/gu.js",
-	"./he": "./node_modules/moment/locale/he.js",
-	"./he.js": "./node_modules/moment/locale/he.js",
-	"./hi": "./node_modules/moment/locale/hi.js",
-	"./hi.js": "./node_modules/moment/locale/hi.js",
-	"./hr": "./node_modules/moment/locale/hr.js",
-	"./hr.js": "./node_modules/moment/locale/hr.js",
-	"./hu": "./node_modules/moment/locale/hu.js",
-	"./hu.js": "./node_modules/moment/locale/hu.js",
-	"./hy-am": "./node_modules/moment/locale/hy-am.js",
-	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
-	"./id": "./node_modules/moment/locale/id.js",
-	"./id.js": "./node_modules/moment/locale/id.js",
-	"./is": "./node_modules/moment/locale/is.js",
-	"./is.js": "./node_modules/moment/locale/is.js",
-	"./it": "./node_modules/moment/locale/it.js",
-	"./it-ch": "./node_modules/moment/locale/it-ch.js",
-	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
-	"./it.js": "./node_modules/moment/locale/it.js",
-	"./ja": "./node_modules/moment/locale/ja.js",
-	"./ja.js": "./node_modules/moment/locale/ja.js",
-	"./jv": "./node_modules/moment/locale/jv.js",
-	"./jv.js": "./node_modules/moment/locale/jv.js",
-	"./ka": "./node_modules/moment/locale/ka.js",
-	"./ka.js": "./node_modules/moment/locale/ka.js",
-	"./kk": "./node_modules/moment/locale/kk.js",
-	"./kk.js": "./node_modules/moment/locale/kk.js",
-	"./km": "./node_modules/moment/locale/km.js",
-	"./km.js": "./node_modules/moment/locale/km.js",
-	"./kn": "./node_modules/moment/locale/kn.js",
-	"./kn.js": "./node_modules/moment/locale/kn.js",
-	"./ko": "./node_modules/moment/locale/ko.js",
-	"./ko.js": "./node_modules/moment/locale/ko.js",
-	"./ku": "./node_modules/moment/locale/ku.js",
-	"./ku.js": "./node_modules/moment/locale/ku.js",
-	"./ky": "./node_modules/moment/locale/ky.js",
-	"./ky.js": "./node_modules/moment/locale/ky.js",
-	"./lb": "./node_modules/moment/locale/lb.js",
-	"./lb.js": "./node_modules/moment/locale/lb.js",
-	"./lo": "./node_modules/moment/locale/lo.js",
-	"./lo.js": "./node_modules/moment/locale/lo.js",
-	"./lt": "./node_modules/moment/locale/lt.js",
-	"./lt.js": "./node_modules/moment/locale/lt.js",
-	"./lv": "./node_modules/moment/locale/lv.js",
-	"./lv.js": "./node_modules/moment/locale/lv.js",
-	"./me": "./node_modules/moment/locale/me.js",
-	"./me.js": "./node_modules/moment/locale/me.js",
-	"./mi": "./node_modules/moment/locale/mi.js",
-	"./mi.js": "./node_modules/moment/locale/mi.js",
-	"./mk": "./node_modules/moment/locale/mk.js",
-	"./mk.js": "./node_modules/moment/locale/mk.js",
-	"./ml": "./node_modules/moment/locale/ml.js",
-	"./ml.js": "./node_modules/moment/locale/ml.js",
-	"./mn": "./node_modules/moment/locale/mn.js",
-	"./mn.js": "./node_modules/moment/locale/mn.js",
-	"./mr": "./node_modules/moment/locale/mr.js",
-	"./mr.js": "./node_modules/moment/locale/mr.js",
-	"./ms": "./node_modules/moment/locale/ms.js",
-	"./ms-my": "./node_modules/moment/locale/ms-my.js",
-	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
-	"./ms.js": "./node_modules/moment/locale/ms.js",
-	"./mt": "./node_modules/moment/locale/mt.js",
-	"./mt.js": "./node_modules/moment/locale/mt.js",
-	"./my": "./node_modules/moment/locale/my.js",
-	"./my.js": "./node_modules/moment/locale/my.js",
-	"./nb": "./node_modules/moment/locale/nb.js",
-	"./nb.js": "./node_modules/moment/locale/nb.js",
-	"./ne": "./node_modules/moment/locale/ne.js",
-	"./ne.js": "./node_modules/moment/locale/ne.js",
-	"./nl": "./node_modules/moment/locale/nl.js",
-	"./nl-be": "./node_modules/moment/locale/nl-be.js",
-	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
-	"./nl.js": "./node_modules/moment/locale/nl.js",
-	"./nn": "./node_modules/moment/locale/nn.js",
-	"./nn.js": "./node_modules/moment/locale/nn.js",
-	"./oc-lnc": "./node_modules/moment/locale/oc-lnc.js",
-	"./oc-lnc.js": "./node_modules/moment/locale/oc-lnc.js",
-	"./pa-in": "./node_modules/moment/locale/pa-in.js",
-	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
-	"./pl": "./node_modules/moment/locale/pl.js",
-	"./pl.js": "./node_modules/moment/locale/pl.js",
-	"./pt": "./node_modules/moment/locale/pt.js",
-	"./pt-br": "./node_modules/moment/locale/pt-br.js",
-	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
-	"./pt.js": "./node_modules/moment/locale/pt.js",
-	"./ro": "./node_modules/moment/locale/ro.js",
-	"./ro.js": "./node_modules/moment/locale/ro.js",
-	"./ru": "./node_modules/moment/locale/ru.js",
-	"./ru.js": "./node_modules/moment/locale/ru.js",
-	"./sd": "./node_modules/moment/locale/sd.js",
-	"./sd.js": "./node_modules/moment/locale/sd.js",
-	"./se": "./node_modules/moment/locale/se.js",
-	"./se.js": "./node_modules/moment/locale/se.js",
-	"./si": "./node_modules/moment/locale/si.js",
-	"./si.js": "./node_modules/moment/locale/si.js",
-	"./sk": "./node_modules/moment/locale/sk.js",
-	"./sk.js": "./node_modules/moment/locale/sk.js",
-	"./sl": "./node_modules/moment/locale/sl.js",
-	"./sl.js": "./node_modules/moment/locale/sl.js",
-	"./sq": "./node_modules/moment/locale/sq.js",
-	"./sq.js": "./node_modules/moment/locale/sq.js",
-	"./sr": "./node_modules/moment/locale/sr.js",
-	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
-	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
-	"./sr.js": "./node_modules/moment/locale/sr.js",
-	"./ss": "./node_modules/moment/locale/ss.js",
-	"./ss.js": "./node_modules/moment/locale/ss.js",
-	"./sv": "./node_modules/moment/locale/sv.js",
-	"./sv.js": "./node_modules/moment/locale/sv.js",
-	"./sw": "./node_modules/moment/locale/sw.js",
-	"./sw.js": "./node_modules/moment/locale/sw.js",
-	"./ta": "./node_modules/moment/locale/ta.js",
-	"./ta.js": "./node_modules/moment/locale/ta.js",
-	"./te": "./node_modules/moment/locale/te.js",
-	"./te.js": "./node_modules/moment/locale/te.js",
-	"./tet": "./node_modules/moment/locale/tet.js",
-	"./tet.js": "./node_modules/moment/locale/tet.js",
-	"./tg": "./node_modules/moment/locale/tg.js",
-	"./tg.js": "./node_modules/moment/locale/tg.js",
-	"./th": "./node_modules/moment/locale/th.js",
-	"./th.js": "./node_modules/moment/locale/th.js",
-	"./tk": "./node_modules/moment/locale/tk.js",
-	"./tk.js": "./node_modules/moment/locale/tk.js",
-	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
-	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
-	"./tlh": "./node_modules/moment/locale/tlh.js",
-	"./tlh.js": "./node_modules/moment/locale/tlh.js",
-	"./tr": "./node_modules/moment/locale/tr.js",
-	"./tr.js": "./node_modules/moment/locale/tr.js",
-	"./tzl": "./node_modules/moment/locale/tzl.js",
-	"./tzl.js": "./node_modules/moment/locale/tzl.js",
-	"./tzm": "./node_modules/moment/locale/tzm.js",
-	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
-	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
-	"./tzm.js": "./node_modules/moment/locale/tzm.js",
-	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
-	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
-	"./uk": "./node_modules/moment/locale/uk.js",
-	"./uk.js": "./node_modules/moment/locale/uk.js",
-	"./ur": "./node_modules/moment/locale/ur.js",
-	"./ur.js": "./node_modules/moment/locale/ur.js",
-	"./uz": "./node_modules/moment/locale/uz.js",
-	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
-	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
-	"./uz.js": "./node_modules/moment/locale/uz.js",
-	"./vi": "./node_modules/moment/locale/vi.js",
-	"./vi.js": "./node_modules/moment/locale/vi.js",
-	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
-	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
-	"./yo": "./node_modules/moment/locale/yo.js",
-	"./yo.js": "./node_modules/moment/locale/yo.js",
-	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
-	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
-	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
-	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
-	"./zh-mo": "./node_modules/moment/locale/zh-mo.js",
-	"./zh-mo.js": "./node_modules/moment/locale/zh-mo.js",
-	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
-	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
@@ -593,6 +177,80 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "float-right" }, [
+        _c(
+          "form",
+          {
+            attrs: {
+              id: "invisible_form",
+              action: "/api/export",
+              method: "post",
+              target: "_blank"
+            }
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.filter.start_date,
+                  expression: "filter.start_date"
+                }
+              ],
+              attrs: {
+                id: "new_window_parameter_1",
+                name: "start_date",
+                type: "hidden",
+                value: "default"
+              },
+              domProps: { value: _vm.filter.start_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.filter, "start_date", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.filter.end_date,
+                  expression: "filter.end_date"
+                }
+              ],
+              attrs: {
+                id: "new_window_parameter_1",
+                name: "end_date",
+                type: "hidden",
+                value: "default"
+              },
+              domProps: { value: _vm.filter.end_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.filter, "end_date", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "b-button",
+              { attrs: { type: "submit", size: "sm", target: "_blank" } },
+              [_vm._v("Submit")]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
       _c("h2", { staticClass: "h4" }, [_vm._v("Temperature Record")]),
       _vm._v(" "),
       _c("b-overlay", { attrs: { show: _vm.loading, rounded: "sm" } }, [
@@ -616,7 +274,11 @@ var render = function() {
                   _vm._v(" "),
                   _c("th", [_vm._v("Time")]),
                   _vm._v(" "),
-                  _c("th", { staticStyle: { width: "1%" } }, [_vm._v("Temp")])
+                  _c("th", { staticStyle: { width: "1%" } }, [_vm._v("Temp")]),
+                  _vm._v(" "),
+                  _c("th", { staticStyle: { width: "1%" } }, [
+                    _vm._v("Symptoms")
+                  ])
                 ])
               ]),
               _vm._v(" "),
@@ -625,7 +287,7 @@ var render = function() {
                 [
                   _vm._l(_vm.logs, function(item) {
                     return _vm._l(item.logs, function(item2, id) {
-                      return _c("tr", { key: "id" + id }, [
+                      return _c("tr", { key: "id" + item2.id }, [
                         _c("td", [_vm._v(_vm._s(item.employee_id))]),
                         _vm._v(" "),
                         _c("td", [
@@ -662,7 +324,40 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", { class: _vm.tempColor(item2.temp) }, [
                           _vm._v(_vm._s(item2.temp) + "°")
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          [
+                            item2.log
+                              ? _vm._l(item2.log.answer, function(item, index) {
+                                  return _c(
+                                    "span",
+                                    {
+                                      key: index,
+                                      staticClass: "badge bg-danger"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                          " +
+                                          _vm._s(item) +
+                                          "\n                                    "
+                                      )
+                                    ]
+                                  )
+                                })
+                              : _c(
+                                  "span",
+                                  { staticClass: "badge bg-success" },
+                                  [
+                                    _vm._v(
+                                      "\n                                    Ok\n                                "
+                                    )
+                                  ]
+                                )
+                          ],
+                          2
+                        )
                       ])
                     })
                   })
@@ -680,6 +375,118 @@ var render = function() {
 var staticRenderFns = []
 render._withStripped = true
 
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functional component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
 
 
 /***/ }),
