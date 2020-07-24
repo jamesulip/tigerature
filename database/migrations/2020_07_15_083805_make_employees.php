@@ -18,6 +18,7 @@ class MakeEmployees extends Migration
             $table->unsignedInteger('employee_id');
             $table->string('first_name',45);
             $table->string('last_name',45);
+            $table->text('gender')->nullable();
             $table->text('address');
             $table->timestamps();
         });

@@ -32,13 +32,15 @@
             </form>
         </div>
 
-        <h2 class="h4">Temperature Record</h2>
-
+        <legend class="">Temperature Record</legend>
+        <label class="text-muted">{{currentLogged.length}} employee logged their temperature.</label>
+        <check_notlogged :employees="logs"/>
         <b-overlay :show="loading" rounded="sm">
           <div class="table-responsive">
               <table class="table table-bordered table-striped table-sm table-fontsmall">
                   <thead>
                       <tr>
+                          <th>#</th>
                           <th>ID Number</th>
                           <th>Employee Name</th>
                           <th>Date</th>
@@ -49,19 +51,22 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <template v-for="(item) in logs">
+                      <template v-for="(item,idx) in currentLogged">
                             <tr v-for="(item2, id) in item.logs" :key="`id${item2.id}`">
-
+                                <td>{{idx+1}}</td>
                                 <td>{{item.employee_id}}</td>
-                                <td>{{item.last_name}},{{item.first_name}}</td>
+                                <td>{{item.last_name}}, {{item.first_name}}</td>
                                 <td>{{item2.created_at | formatDate('YY-M-D')}}</td>
                                 <td>{{item2.created_at | formatDate('ddd')}}</td>
-                                <td>{{item2.created_at | formatDate('hh:m a')}}</td>
+                                <td>{{item2.created_at | formatDate('hh:m a')}}
+
+                                     <a class="text-red" role="button"  @click="deleteEmp(item,item2)"><i class="fa fa-trash"></i></a>
+                                </td>
                                 <td :class="tempColor(item2.temp)">{{item2.temp}}°</td>
                                 <td>
                                     <template v-if="item2.log">
-                                            <span class="badge bg-danger" v-for="(item, index) in item2.log.answer" :key="index">
-                                              {{item}}
+                                            <span class="badge bg-danger" v-for="(item, index) in item2.log.answer" v-if="item.text" :key="index">
+                                              {{item.text}}
                                         </span>
                                     </template>
                                     <span v-else class="badge bg-success">
@@ -81,7 +86,11 @@
 </template>
 <script>
 import moment from 'moment'
+import check_notlogged from './employee/check_notlogged'
 export default {
+    components:{
+        check_notlogged
+    },
     data() {
         return {
             filter:{
@@ -108,6 +117,11 @@ export default {
                     employee_id:this.filter.employee_id
                 }
             }
+        },
+        currentLogged(){
+            return this.logs.filter(x=>{
+                return x.logs.length
+        })
         }
     },
     mounted(){
@@ -131,7 +145,33 @@ export default {
         this.filterData()
     },
     methods: {
-
+        deleteEmp(user,item2){
+            this.$bvModal.msgBoxConfirm(`Are you sure you want to delete  ${user.first_name}'s ${item2.temp} log?`, {
+                title: 'Confirm Delete',
+                size: 'sm',
+                buttonSize: 'sm',
+                okVariant: 'danger',
+                okTitle: 'Delete',
+                cancelTitle: 'Cancel',
+                footerClass: 'p-2',
+                hideHeaderClose: false,
+                centered: true,
+                html:true
+            })
+            .then(value => {
+               if(value){
+                    axios.delete(`/api/logs/${item2.id}`)
+                    .then(res => {
+                        this.filterData()
+                    })
+                    .catch(err => {
+                        console.error(err);
+                    })
+               }
+            })
+            .catch(err => {
+            })
+        },
         tempColor(temp){
             if(temp>=37.6)
                 return 'bg-danger disabled'

@@ -95,6 +95,11 @@ class employeesAPIController extends AppBaseController
      */
     public function update($id, UpdateemployeesAPIRequest $request)
     {
+
+        $request->validate([
+            'employee_id' => 'required|unique:employees,employee_id,'.$request->id,
+        ]);
+
         $input = $request->all();
 
         /** @var employees $employees */

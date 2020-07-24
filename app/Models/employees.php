@@ -56,7 +56,7 @@ class employees extends Model
      * @var array
      */
     public static $rules = [
-        'employee_id' => 'required|unique:employees',
+        'employee_id' => 'required',
         'first_name' => 'required',
         'last_name' => 'required',
         'address' => 'required'

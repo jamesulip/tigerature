@@ -7,7 +7,7 @@
 /*! exports provided: default */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\laragon\\www\\tigerature\\resources\\js\\pages\\dtr.vue: Unexpected token, expected \";\" (104:22)\n\n\u001b[0m \u001b[90m 102 | \u001b[39m    computed\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 103 | \u001b[39m        filterComputed\u001b[33m:\u001b[39m \u001b[36mfunction\u001b[39m () {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 | \u001b[39m                get() {\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 105 | \u001b[39m                \u001b[36mreturn\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 106 | \u001b[39m                    end_date\u001b[33m:\u001b[39mmoment(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mfilter\u001b[33m.\u001b[39mend_date)\u001b[33m.\u001b[39mformat(\u001b[32m'L'\u001b[39m)\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 107 | \u001b[39m                    start_date\u001b[33m:\u001b[39mmoment(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mfilter\u001b[33m.\u001b[39mstart_date)\u001b[33m.\u001b[39mformat(\u001b[32m'L'\u001b[39m)\u001b[0m\n    at Parser._raise (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:757:17)\n    at Parser.raiseWithData (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:750:17)\n    at Parser.raise (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:744:17)\n    at Parser.unexpected (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:8834:16)\n    at Parser.semicolon (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:8816:40)\n    at Parser.parseExpressionStatement (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11743:10)\n    at Parser.parseStatementContent (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11344:19)\n    at Parser.parseStatement (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11210:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11785:25)\n    at Parser.parseBlockBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11771:10)\n    at Parser.parseBlock (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11755:10)\n    at Parser.parseFunctionBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10758:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10741:10)\n    at C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11925:12\n    at Parser.withTopicForbiddingContext (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11085:14)\n    at Parser.parseFunction (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11924:10)\n    at Parser.parseFunctionExpression (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10217:17)\n    at Parser.parseExprAtom (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10096:21)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9688:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9668:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9538:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9511:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9466:21)\n    at Parser.parseObjectProperty (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10636:101)\n    at Parser.parseObjPropValue (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10661:101)\n    at Parser.parseObjectMember (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10585:10)\n    at Parser.parseObj (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10494:25)\n    at Parser.parseExprAtom (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10090:28)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9688:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9668:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9538:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9511:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9466:21)\n    at Parser.parseObjectProperty (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10636:101)\n    at Parser.parseObjPropValue (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10661:101)\n    at Parser.parseObjectMember (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10585:10)");
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\laragon\\www\\tigerature\\resources\\js\\pages\\dtr.vue: Unexpected token, expected \",\" (145:8)\n\n\u001b[0m \u001b[90m 143 | \u001b[39m            })\u001b[0m\n\u001b[0m \u001b[90m 144 | \u001b[39m        }\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 145 | \u001b[39m        deleteEmp(user\u001b[33m,\u001b[39mitem2){\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 146 | \u001b[39m            \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39m$bvModal\u001b[33m.\u001b[39mmsgBoxConfirm(\u001b[32m`Are you sure you want to delete  ${user.first_name}'s ${item2.temp} log?`\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 147 | \u001b[39m                title\u001b[33m:\u001b[39m \u001b[32m'Confirm Delete'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 148 | \u001b[39m                size\u001b[33m:\u001b[39m \u001b[32m'sm'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n    at Parser._raise (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:757:17)\n    at Parser.raiseWithData (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:750:17)\n    at Parser.raise (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:744:17)\n    at Parser.unexpected (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:8834:16)\n    at Parser.expect (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:8820:28)\n    at Parser.parseObj (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10485:14)\n    at Parser.parseExprAtom (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10090:28)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9688:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9668:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9538:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9511:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9466:21)\n    at Parser.parseObjectProperty (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10636:101)\n    at Parser.parseObjPropValue (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10661:101)\n    at Parser.parseObjectMember (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10585:10)\n    at Parser.parseObj (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10494:25)\n    at Parser.parseExprAtom (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:10090:28)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9688:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9668:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9538:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9511:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:9466:21)\n    at Parser.parseExportDefaultExpression (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:12412:24)\n    at Parser.parseExport (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:12314:31)\n    at Parser.parseStatementContent (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11314:27)\n    at Parser.parseStatement (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11210:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11785:25)\n    at Parser.parseBlockBody (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11771:10)\n    at Parser.parseTopLevel (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:11141:10)\n    at Parser.parse (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:12843:10)\n    at parse (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\parser\\lib\\index.js:12896:38)\n    at parser (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\laragon\\www\\tigerature\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)");
 
 /***/ }),
 
@@ -194,8 +194,8 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.filter.start_date,
-                  expression: "filter.start_date"
+                  value: _vm.filterComputed.start_date,
+                  expression: "filterComputed.start_date"
                 }
               ],
               attrs: {
@@ -204,13 +204,17 @@ var render = function() {
                 type: "hidden",
                 value: "default"
               },
-              domProps: { value: _vm.filter.start_date },
+              domProps: { value: _vm.filterComputed.start_date },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.filter, "start_date", $event.target.value)
+                  _vm.$set(
+                    _vm.filterComputed,
+                    "start_date",
+                    $event.target.value
+                  )
                 }
               }
             }),
@@ -220,8 +224,8 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.filter.end_date,
-                  expression: "filter.end_date"
+                  value: _vm.filterComputed.end_date,
+                  expression: "filterComputed.end_date"
                 }
               ],
               attrs: {
@@ -230,13 +234,13 @@ var render = function() {
                 type: "hidden",
                 value: "default"
               },
-              domProps: { value: _vm.filter.end_date },
+              domProps: { value: _vm.filterComputed.end_date },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.filter, "end_date", $event.target.value)
+                  _vm.$set(_vm.filterComputed, "end_date", $event.target.value)
                 }
               }
             }),
@@ -244,7 +248,10 @@ var render = function() {
             _c(
               "b-button",
               { attrs: { type: "submit", size: "sm", target: "_blank" } },
-              [_vm._v("Submit")]
+              [
+                _c("span", { staticClass: "fa fa-download" }),
+                _vm._v(" Download")
+              ]
             )
           ],
           1
@@ -264,6 +271,8 @@ var render = function() {
             [
               _c("thead", [
                 _c("tr", [
+                  _c("th", [_vm._v("#")]),
+                  _vm._v(" "),
                   _c("th", [_vm._v("ID Number")]),
                   _vm._v(" "),
                   _c("th", [_vm._v("Employee Name")]),
@@ -285,9 +294,11 @@ var render = function() {
               _c(
                 "tbody",
                 [
-                  _vm._l(_vm.logs, function(item) {
+                  _vm._l(_vm.logs, function(item, idx) {
                     return _vm._l(item.logs, function(item2, id) {
                       return _c("tr", { key: "id" + item2.id }, [
+                        _c("td", [_vm._v(_vm._s(idx))]),
+                        _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(item.employee_id))]),
                         _vm._v(" "),
                         _c("td", [
@@ -318,7 +329,20 @@ var render = function() {
                           _vm._v(
                             _vm._s(
                               _vm._f("formatDate")(item2.created_at, "hh:m a")
-                            )
+                            ) + "\n\n                                 "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-red",
+                              attrs: { role: "button" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteEmp(item, item2)
+                                }
+                              }
+                            },
+                            [_c("i", { staticClass: "fa fa-trash" })]
                           )
                         ]),
                         _vm._v(" "),
@@ -331,20 +355,22 @@ var render = function() {
                           [
                             item2.log
                               ? _vm._l(item2.log.answer, function(item, index) {
-                                  return _c(
-                                    "span",
-                                    {
-                                      key: index,
-                                      staticClass: "badge bg-danger"
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                          " +
-                                          _vm._s(item) +
-                                          "\n                                    "
+                                  return item.text
+                                    ? _c(
+                                        "span",
+                                        {
+                                          key: index,
+                                          staticClass: "badge bg-danger"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                          " +
+                                              _vm._s(item.text) +
+                                              "\n                                    "
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  )
+                                    : _vm._e()
                                 })
                               : _c(
                                   "span",

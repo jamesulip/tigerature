@@ -15,9 +15,10 @@ class CreateQuestions extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('text',25);
+            $table->text('text',25);
             $table->text('description');
             $table->enum('type',['string','number','checkbox']);
+            $table->unsignedInteger('num');
             $table->timestamps();
         });
     }

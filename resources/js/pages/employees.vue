@@ -6,12 +6,12 @@
       <div class="btn-group mr-2">
         <!-- <button class="btn btn-sm btn-outline-secondary">Add Employee</button> -->
         <addemployee @added="getEmployees()"/>
-        <button class="btn btn-sm btn-outline-secondary">Export</button>
+        <!-- <button class="btn btn-sm btn-outline-secondary">Export</button> -->
       </div>
-      <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+      <!-- <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
         <span data-feather="calendar"></span>
         This week
-      </button>
+      </button> -->
     </div>
   </div>
 
@@ -19,15 +19,16 @@
 
   <h2 class="h4">Employee List</h2>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped table-xs">
+    <table class="table table-striped table-valign-middle">
       <thead>
         <tr>
           <th>ID Number</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Address</th>
-          <th>Last Temperature</th>
-          <th>Actions</th>
+          <!-- <th>Last Temperature</th> -->
+          <th colspan="2" style="width:1%">Action</th>
+          <!-- <th style="width:1%"></th> -->
         </tr>
       </thead>
       <tbody>
@@ -36,9 +37,16 @@
             <td>{{item.first_name}}</td>
             <td>{{item.last_name}}</td>
             <td>{{item.address}}</td>
-            <td>{{item.created_at | formatDate('LL')}}</td>
-            <td>
+            <!-- <td>{{item.created_at | formatDate('LL')}}</td> -->
+            <td style="diplay:flex">
                 <a class="text-red" role="button"  @click="deleteEmp(item)"><i class="fa fa-trash"></i></a>
+
+
+            </td><td style="diplay:flex">
+                <!-- <a class="text-info" role="button"  @click="deleteEmp(item)"><i class="fa fa-edit"></i></a> -->
+                <edit_emp v-model="employees.data[index]"/>
+
+
             </td>
         </tr>
       </tbody>
@@ -49,10 +57,11 @@
 
 <script>
 import addemployee from './employee/add'
+import edit_emp from './employee/edit'
 import moment from 'moment'
 export default {
     components:{
-        addemployee
+        addemployee,edit_emp
     },
     data() {
         return {
@@ -92,8 +101,6 @@ export default {
                }
             })
             .catch(err => {
-                // console.log('er',err)
-                // An error occurred
             })
         },
         getEmployees(){

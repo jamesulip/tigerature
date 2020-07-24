@@ -39,7 +39,7 @@ class questionsAPIController extends AppBaseController
             $request->get('skip'),
             $request->get('limit')
         );
-
+        $questions =  questions::orderBy('num','asc')->get();
         return $this->sendResponse($questions->toArray(), 'Questions retrieved successfully');
     }
 
